@@ -27,33 +27,6 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
-
-  @ReactMethod
-  public void getSunmiPrinter(Promise promise){
-    promise.resolve(SunmiPrintHelper.getInstance().sunmiPrinter);
-  }
-
-  @ReactMethod
-  public String test(){
-    return "test";
-  }
-
-  @ReactMethod
-  public void test2(String text, Promise promise){
-    promise.resolve(text);
-  }
-
-  @ReactMethod
-  public void test3(String text, Promise promise){
-    promise.reject(text, new Exception("Test"));
-  }
-
-  @ReactMethod
-  public void hasNotService(Promise promise){
-    boolean a = SunmiPrintHelper.getInstance().sunmiPrinterService == null;
-    promise.resolve(a);
-  }
-
   @ReactMethod
   public void print(String text, Promise promise){
     SunmiPrintHelper.getInstance().printText2(text);
@@ -63,7 +36,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void clearBuffer(Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
@@ -78,7 +51,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void printOriginalText(String text, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
@@ -93,7 +66,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setAlignment(int alignment, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
@@ -108,7 +81,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setFontSize(float fontSize, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
@@ -123,7 +96,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void lineWrap(int linesToWrap, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
@@ -138,7 +111,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void printBitmap(String base64, int height, int width, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
@@ -156,7 +129,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setBold(boolean bold, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      //TODO Service disconnection processing
+      promise.reject(false);
       return;
     }
 
