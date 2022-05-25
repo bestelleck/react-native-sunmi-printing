@@ -15,6 +15,7 @@ import com.facebook.react.module.annotations.ReactModule;
 @ReactModule(name = SunmiPrintingModule.NAME)
 public class SunmiPrintingModule extends ReactContextBaseJavaModule {
     public static final String NAME = "SunmiPrinting";
+    public static final String SERVICE_NOT_FOUND = "SERVICE_NOT_FOUND";
 
     public SunmiPrintingModule(ReactApplicationContext reactContext) {
       super(reactContext);
@@ -36,7 +37,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void clearBuffer(Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
@@ -51,7 +52,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void printOriginalText(String text, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
@@ -66,7 +67,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setAlignment(int alignment, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
@@ -81,7 +82,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setFontSize(float fontSize, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
@@ -96,7 +97,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void lineWrap(int linesToWrap, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
@@ -111,7 +112,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void printBitmap(String base64, int height, int width, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
@@ -129,7 +130,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void setBold(boolean bold, Promise promise){
     if(SunmiPrintHelper.getInstance().sunmiPrinterService == null){
-      promise.reject(false);
+      promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
       return;
     }
 
