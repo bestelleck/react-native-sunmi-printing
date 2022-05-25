@@ -1,0 +1,28 @@
+{
+  "name": "react-native-sunmi-printing",
+  "version": "0.1.0",
+  "description": "Sunmi printing",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react-native",
+    "sunmi",
+    "android"
+  ],
+  "repository": "https://github.com/bestelleck/react-native-sunmi-printing",
+  "author": "Sascha1251",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bestelleck/react-native-sunmi-printing/issues"
+  },
+  "homepage": "https://github.com/bestelleck/react-native-sunmi-printing",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
