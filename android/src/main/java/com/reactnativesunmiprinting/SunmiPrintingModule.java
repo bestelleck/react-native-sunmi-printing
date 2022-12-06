@@ -127,6 +127,22 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void printQRCode(String data, int modulesize, int errorlevel, Promise promise) {
+        if (SunmiPrintHelper.getInstance().sunmiPrinterService == null) {
+            promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
+            return;
+        }
+
+        try {
+            SunmiPrintHelper.getInstance().sunmiPrinterService.printQr(data, modulesize, errorlevel, null);
+            promise.resolve(true);
+        } catch (RemoteException e) {
+            promise.reject(e);
+        }
+        promise.resolve(true);
+    }
+
+    @ReactMethod
     public void setBold(boolean bold, Promise promise) {
         if (SunmiPrintHelper.getInstance().sunmiPrinterService == null) {
             promise.reject(SERVICE_NOT_FOUND, "Printer Service is null");
