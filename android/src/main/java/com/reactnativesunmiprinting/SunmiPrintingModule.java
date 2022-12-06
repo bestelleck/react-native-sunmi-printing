@@ -134,7 +134,7 @@ public class SunmiPrintingModule extends ReactContextBaseJavaModule {
         }
 
         try {
-            SunmiPrintHelper.getInstance().sunmiPrinterService.printQr(data, modulesize, errorlevel, null);
+            SunmiPrintHelper.getInstance().sunmiPrinterService.printQRCode(data, modulesize, errorlevel, null);
             promise.resolve(true);
         } catch (RemoteException e) {
             promise.reject(e);

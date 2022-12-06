@@ -393,7 +393,7 @@ public class SunmiPrintHelper {
     /**
      * print Qr Code
      */
-    public void printQr(String data, int modulesize, int errorlevel) {
+    public void printQRCode(String data, int modulesize, int errorlevel) {
         if (sunmiPrinterService == null) {
             //TODO Service disconnection processing
             return;
