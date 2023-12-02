@@ -19,10 +19,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('SunmiPrinting_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('SunmiPrinting_compileSdkVersion', 30)
     defaultConfig {
         minSdkVersion safeExtGet('SunmiPrinting_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('SunmiPrinting_targetSdkVersion', 29)
+        targetSdkVersion safeExtGet('SunmiPrinting_targetSdkVersion', 30)
         versionCode 1
         versionName "1.0"
 
